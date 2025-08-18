@@ -1,4 +1,4 @@
-# Telegram Data Pipeline: From Raw Telegram Data to an Analytical API
+# Telegram Data Pipeline: From Raw Telegram Data to an Analytical API (Summary)
 
 This project builds an end-to-end data pipeline to extract, transform, and analyze data from public Telegram channels related to Ethiopian medical businesses. It leverages modern data engineering tools to provide actionable insights via an analytical API.
 
