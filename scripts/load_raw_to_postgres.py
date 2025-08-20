@@ -6,7 +6,7 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
-DATA_LAKE_PATH = "data/raw/telegram_messages"
+DATA_LAKE_PATH = "data/telegram_messages"
 
 def get_db_connection():
     """Establishes a connection to the PostgreSQL database."""
