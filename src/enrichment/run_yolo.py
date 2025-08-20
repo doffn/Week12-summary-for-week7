@@ -6,9 +6,6 @@ from dotenv import load_dotenv
 
 
 
-
-
-
 def run_yolo_on_images():
     load_dotenv()
 
