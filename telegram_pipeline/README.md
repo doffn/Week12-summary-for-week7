@@ -45,5 +45,3 @@ The recommended way to deploy this project is via **Dagster+**.
 Refer to the [Dagster+ documentation](https://docs.dagster.io/dagster-plus/) for deployment instructions.
 
 ---
-
-Do you want me to make it **shorter and minimal** (like a quickstart guide) or keep this **detailed developer-friendly version**?
