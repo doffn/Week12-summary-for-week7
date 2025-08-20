@@ -1,47 +1,49 @@
-# telegram_pipeline
+# telegram\_pipeline
 
-This is a [Dagster](https://dagster.io/) project scaffolded with [`dagster project scaffold`](https://docs.dagster.io/guides/build/projects/creating-a-new-project).
+This repository contains a [Dagster](https://dagster.io/) project, created using the [`dagster project scaffold`](https://docs.dagster.io/guides/build/projects/creating-a-new-project) command.
 
-## Getting started
+## Getting Started
 
-First, install your Dagster code location as a Python package. By using the --editable flag, pip will install your Python package in ["editable mode"](https://pip.pypa.io/en/latest/topics/local-project-installs/#editable-installs) so that as you develop, local code changes will automatically apply.
+1. Install the project as a Python package in editable mode so that changes in your local code are reflected immediately:
 
-```bash
+```
 pip install -e ".[dev]"
 ```
 
-Then, start the Dagster UI web server:
+2. Launch the Dagster development UI:
 
-```bash
+```
 dagster dev
 ```
 
-Open http://localhost:3000 with your browser to see the project.
+3. Visit [http://localhost:3000](http://localhost:3000) in your browser to explore the project.
 
-You can start writing assets in `telegram_pipeline/assets.py`. The assets are automatically loaded into the Dagster code location as you define them.
+You can begin defining assets in `telegram_pipeline/assets.py`. Any assets you create will be automatically loaded into the Dagster code location.
 
-## Development
+## Development Guide
 
-### Adding new Python dependencies
+### Adding Dependencies
 
-You can specify new Python dependencies in `setup.py`.
+Add additional Python dependencies by updating the `setup.py` file.
 
-### Unit testing
+### Running Tests
 
-Tests are in the `telegram_pipeline_tests` directory and you can run tests using `pytest`:
+Unit tests are located in the `telegram_pipeline_tests` directory. Run them with:
 
-```bash
+```
 pytest telegram_pipeline_tests
 ```
 
-### Schedules and sensors
+### Using Schedules and Sensors
 
-If you want to enable Dagster [Schedules](https://docs.dagster.io/guides/automate/schedules/) or [Sensors](https://docs.dagster.io/guides/automate/sensors/) for your jobs, the [Dagster Daemon](https://docs.dagster.io/guides/deploy/execution/dagster-daemon) process must be running. This is done automatically when you run `dagster dev`.
+To use Dagster [Schedules](https://docs.dagster.io/guides/automate/schedules/) or [Sensors](https://docs.dagster.io/guides/automate/sensors/), ensure the [Dagster Daemon](https://docs.dagster.io/guides/deploy/execution/dagster-daemon) is running.
+The daemon is started automatically when running `dagster dev`. Once active, you can enable schedules and sensors for your jobs.
 
-Once your Dagster Daemon is running, you can start turning on schedules and sensors for your jobs.
+## Deployment with Dagster+
 
-## Deploy on Dagster+
+The recommended way to deploy this project is via **Dagster+**.
+Refer to the [Dagster+ documentation](https://docs.dagster.io/dagster-plus/) for deployment instructions.
 
-The easiest way to deploy your Dagster project is to use Dagster+.
+---
 
-Check out the [Dagster+ documentation](https://docs.dagster.io/dagster-plus/) to learn more.
+Do you want me to make it **shorter and minimal** (like a quickstart guide) or keep this **detailed developer-friendly version**?
