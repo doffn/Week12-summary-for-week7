@@ -64,19 +64,77 @@ graph TD
 
 ```
 .
-├── .env.example
-├── Dockerfile
-├── docker-compose.yml
-├── requirements.txt
-├── data/                     # Raw JSON messages and images
-├── scripts/                  # Python scripts for scraping, loading (JSON->Mongo, Mongo->PG), YOLO enrichment
-├── dbt_project/              # dbt models (staging, marts), tests, config
-│   ├── models/
-│   │   ├── staging/stg_telegram_messages.sql
-│   │   └── marts/dim_channels.sql, fct_messages.sql, fct_image_detections.sql
-│   └── tests/
-├── fastapi_app/              # FastAPI application (main.py, database.py, schemas.py)
-└── dagster_project/          # Dagster orchestration (repository.py, ops.py)
+├── ./
+    ├── .dvcignore
+    ├── .gitignore
+    ├── CODE_STRUCTURE.md
+    ├── docker-compose.yml
+    ├── Dockerfile
+    ├── README.md
+    ├── requirements.txt
+    ├── tree.py
+    ├── .dvc/
+        ├── .gitignore
+        ├── config
+    ├── api/
+        ├── crud.py
+        ├── database.py
+        ├── main.py
+        ├── models.py
+        ├── schemas.py
+    ├── dagster_project/
+        ├── ops.py
+        ├── repository.py
+    ├── data/
+        ├── .gitignore
+        ├── raw.dvc
+    ├── dbt_project/
+        ├── dbt_project.yml
+        ├── profiles.yml
+        ├── models/
+            ├── marts/
+                ├── dim_channels.sql
+                ├── fct_messages.sql
+                ├── fct_messages.yml
+            ├── staging/
+                ├── stg_telegram_messages.sql
+        ├── tests/
+            ├── messages_with_text_and_no_media.sql
+    ├── scripts/
+        ├── load_raw_to_postgres.py
+        ├── setup_env.py
+        ├── telegram_scraper.py
+        ├── yolo_enrichment.py
+    ├── src/
+        ├── config/
+            ├── config.py
+            ├── setup_schema.py
+        ├── enrichment/
+            ├── run_yolo.py
+        ├── etl/
+            ├── load_image_detections.py
+            ├── load_raw_to_postgres.py
+        ├── scraping/
+            ├── scrape_telegram.py
+    ├── telegram_pipeline/
+        ├── pyproject.toml
+        ├── README.md
+        ├── setup.cfg
+        ├── setup.py
+        ├── yolov8n.pt
+        ├── logs/
+            ├── dbt.log
+        ├── telegram_pipeline/
+            ├── assets.py
+            ├── definitions.py
+            ├── jobs.py
+            ├── ops.py
+            ├── repositories.py
+            ├── __init__.py
+        ├── telegram_pipeline_tests/
+            ├── test_assets.py
+            ├── __init__.py
+
 ```
 
 ## 6. Running the Pipeline
